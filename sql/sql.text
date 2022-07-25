@@ -1,0 +1,15 @@
+DROP TABLE IF EXISTS post CASCADE;
+    CREATE TABLE post
+    (
+        id   bigint(5) NOT NULL AUTO_INCREMENT,
+        title varchar(100) NOT NULL,
+        writer varchar(50) NOT NULL,
+        content varchar(255) NOT NULL,
+        password varchar(255) NOT NULL,
+        PRIMARY KEY (id)
+);
+
+INSERT INTO post (title, writer, content, password) VALUES
+('This is Spring','Rio','Ario', '1234');
+
+SELECT * FROM post;
