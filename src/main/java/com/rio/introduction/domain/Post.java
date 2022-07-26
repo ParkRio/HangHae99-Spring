@@ -1,5 +1,6 @@
 package com.rio.introduction.domain;
 
+import com.rio.introduction.dto.ContentResponseDTO;
 import com.rio.introduction.dto.PostDTO;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -7,12 +8,13 @@ import lombok.Setter;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor // default construtor 생성
-public class Post {
+public class Post extends Timestamped {
     /**
      * encapsulation
      */
@@ -32,6 +34,13 @@ public class Post {
     private String password; // 비밀번호
 
     public Post(PostDTO dto) {
+        this.title = dto.getTitle();
+        this.writer = dto.getWriter();
+        this.content = dto.getContent();
+        this.password = dto.getPassword();
+    }
+
+    public void update(PostDTO dto) {
         this.title = dto.getTitle();
         this.writer = dto.getWriter();
         this.content = dto.getContent();

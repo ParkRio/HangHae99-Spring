@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class DisConnectDbPostRepositoryTest {
 
-    PostRepository postRepository = new DisConnectDbPostRepository();
+    // PostRepository postRepository = new DisConnectDbPostRepository();
 
     @Test
     void save() {
