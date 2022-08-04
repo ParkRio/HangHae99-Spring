@@ -1,0 +1,34 @@
+spring:
+
+  h2:
+    console:
+      enabled: true
+
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+
+jwt :
+  secret: c3ByaW5nLWJvb3Qtc2VjdXJpdHktand0LXR1dG9yaWFsLXBhcmtyaW8tc3ByaW5nLWJvb3Qtc2VjdXJpdHktand0LXR1dG9yaWFs
+
+    # code : spring-boot-security-jwt-tutorial-parkrio-spring-boot-security-jwt-tutorial
+
+    # HS512 ????? ??? ??? ??? 512bit, ? 64byte ??? secret key? ???? ??.
+    # Secret ?? ?? ???? Base64 ? ???? ? ?? (?? ???? ???? ??? ??? ??)
+    # $ echo 'spring-boot-security-jwt-tutorial-jiwoon-spring-boot-security-jwt-tutorial' | base64
+
+#  jwt:
+#    header: Authorization
+#    access-secret: 7ISc7Jq47Iuc7KSR656R6rWs7Iug64K07Jet66GcMeq4uDg17Jqw65SU7JWI7JWE7YyM7Yq4MTEx64+ZMTEwOO2YuA==
+#    access-token-validity-in-second: 300
+#    refresh-secret: 7ISc7Jq47Iuc7KSR656R6rWs7Iug64K07Jet66GcMeq4uDg17Jqw65SU7JWI7JWE7YyM7Yq4MTEx64+ZMTEwOO2YuA==
+#    refresh-token-validity-in-second: 300
+
+#spring.datasource.url=jdbc:h2:mem:testdb
+#spring.datasource.driverClassName=org.h2.Driver
+#spring.datasource.username=sa
+#spring.datasource.password=
+#spring.h2.console.enabled=true

@@ -1,12 +1,16 @@
 package com.sparta.week04.model;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.sparta.week04.dto.RequestDto;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.sparta.week04.dto.PostRequestDto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -28,19 +32,23 @@ public class Post extends Timestamped{
 
     @JsonIgnore // 속성(필드, 멤버변수) 수준에서 값 무시 --> 비밀번호 안나옴
     @Column(nullable = false)
-    private String password;
+    private String postPassword;
 
-    public Post(RequestDto requestDto) {
+    @JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class)
+    @OneToMany(mappedBy = "post")
+    private List<Reply> replies = new ArrayList<>();
+
+    public Post(PostRequestDto requestDto) {
         this.title = requestDto.getTitle();
         this.content = requestDto.getContent();
         this.author = requestDto.getAuthor();
-        this.password = requestDto.getPassword();
+        this.postPassword = requestDto.getPassword();
     }
 
-    public void updatePost(RequestDto requestDto) {
+    public void updatePost(PostRequestDto requestDto) {
         this.title = requestDto.getTitle();
         this.content = requestDto.getContent();
         this.author = requestDto.getAuthor();
-        this.password = requestDto.getPassword();
+        this.postPassword = requestDto.getPassword();
     }
 }
