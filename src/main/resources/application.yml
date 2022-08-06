@@ -1,0 +1,43 @@
+spring:
+#  h2:
+#    console:
+#      enabled: true
+
+#  datasource:
+#    url: jdbc:h2:mem:testweek05
+#    driver-class-name: org.h2.Driver
+#    username: sa
+#    password:
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/rio?serverTimezone=Asia/Seoul
+    username: root
+    password: 1234
+
+
+#  jpa:
+#    database-platform: H2
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: update
+
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+
+jwt:
+  secret: MTDsm5TslYjsl5Dst6jsl4XrkJjqsoztlbTso7zshLjsmpTsp4Tsp5zthrXsnqXsl5DsnpTqs6DrlqjslrTsp4Dqs6DsnojslrTsmpTso7zsi53snYDsnpDqvrjrlqjslrTsp4Dqs6DsnbTrn6zri6TqsrDtmLzrqrvtlZjqs6Dtj4nsg53tmYDslYTruYTroZzsgrTslYTqsIDrqbTslrTrlqHtlbTsmpTrhIjrrLTrhIjrrLTrtojsjI3tlZjri4jquYzsoJzrsJzsi5zsm5Tsl5Dst6jsl4XqvK3si5zsvJzso7zshLjsmpTslYzqsp/so6A/
+
+
+server:
+  servlet:
+    encoding:
+      charset: UTF-8
+      force: true
+      enabled:
